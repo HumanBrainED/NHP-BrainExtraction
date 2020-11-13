@@ -21,15 +21,6 @@ This is a pre-release of skull-stripped brian masks of T1w images for 136 macaqu
 
 [FreeSurfer](https://github.com/HumanBrainED/NHP-BrainExtraction/blob/master/PRIME-DE_BrainMask/vcheck_summary_FS.md)
 
-#### Manually edited brain masks for training (19 macaque monkeys from 13 sites)
-![Training masks](https://github.com/TingsterX/PRIME-DE/blob/master/BrainExtraction/release/pre-release_2020-04-08/train_gt.gif)
-
-#### Brain masks for 30 macaque monkeys from 6 of 13 sites used for training 
-![Testing masks](https://github.com/TingsterX/PRIME-DE/blob/master/BrainExtraction/release/pre-release_2020-04-08/test_unet.gif)
-
-#### Brain masks for 85 macaque monkeys left
-![release](https://github.com/TingsterX/PRIME-DE/blob/master/BrainExtraction/release/pre-release_2020-04-08/other_unet.gif)
-
 ## UNet Model
 ----
 #### Installation
@@ -49,12 +40,18 @@ Output: *_pre_mask.nii.gz
 
 3. **Site-All-T-epoch_36_update_with_Site_*.model**: Site-specific model for NIMH, ecnu-k, nin, rockefeller, uwo, mountsinai-S, and lyon.
 
+#### [Download the code and models](https://github.com/HumanBrainED/NHP-BrainExtraction/tree/master/UNet_Model)
 
-### [Download the code and models](https://github.com/HumanBrainED/NHP-BrainExtraction/tree/master/UNet_Model)
+#### Manually edited brain masks for training (19 macaque monkeys from 13 sites)
+![Training masks](https://github.com/TingsterX/PRIME-DE/blob/master/BrainExtraction/release/pre-release_2020-04-08/train_gt.gif)
+
+#### Brain masks for 30 macaque monkeys from 6 of 13 sites used for training 
+![Testing masks](https://github.com/TingsterX/PRIME-DE/blob/master/BrainExtraction/release/pre-release_2020-04-08/test_unet.gif)
+
+#### Brain masks for 85 macaque monkeys left
+![release](https://github.com/TingsterX/PRIME-DE/blob/master/BrainExtraction/release/pre-release_2020-04-08/other_unet.gif)
 
 Reference:
 [OHBM2019 poster](https://ww5.aievolution.com/hbm1901/index.cfm?do=abs.viewAbs&abs=4924)
 Paper: coming soon
-
-Contributors: Xindi Wang, Jae Wook Cho, Xinhui Li, Ting Xu
 
