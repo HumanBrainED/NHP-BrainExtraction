@@ -40,7 +40,7 @@ Output: *_pre_mask.nii.gz
 
 3. **Site-All-T-epoch_36_update_with_Site_*.model**: Site-specific model for NIMH, ecnu-k, nin, rockefeller, uwo, mountsinai-S, and lyon.
 
-#### [Download the code and models](https://github.com/HumanBrainED/NHP-BrainExtraction/tree/master/UNet_Model)
+### [Download the code and models](https://github.com/HumanBrainED/NHP-BrainExtraction/tree/master/UNet_Model)
 
 #### Manually edited brain masks for transfer-learning training (12 macaque monkeys from 6 sites, 2 per site)
 ![Training masks](https://github.com/TingsterX/PRIME-DE/blob/master/BrainExtraction/release/1_train12.gif)
@@ -50,6 +50,9 @@ Output: *_pre_mask.nii.gz
 
 #### Brain masks for 136 macaque monkeys (released mask)
 ![release](https://github.com/TingsterX/PRIME-DE/blob/master/BrainExtraction/release/4_release.gif)
+
+### [Download brain masks (136 macaques)](https://github.com/HumanBrainED/NHP-BrainExtraction/blob/master/PRIME-DE_BrainMask/brainmasks/brainmask_T1w_136macaques.tar)
+
 
 Reference:
 [OHBM2019 poster](https://ww5.aievolution.com/hbm1901/index.cfm?do=abs.viewAbs&abs=4924)
