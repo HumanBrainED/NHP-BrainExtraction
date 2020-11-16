@@ -42,16 +42,17 @@ Output: *_pre_mask.nii.gz
 
 #### [Download the code and models](https://github.com/HumanBrainED/NHP-BrainExtraction/tree/master/UNet_Model)
 
-#### Manually edited brain masks for training (19 macaque monkeys from 13 sites)
-![Training masks](https://github.com/TingsterX/PRIME-DE/blob/master/BrainExtraction/release/pre-release_2020-04-08/train_gt.gif)
+#### Manually edited brain masks for transfer-learning training (12 macaque monkeys from 6 sites, 2 per site)
+![Training masks](https://github.com/TingsterX/PRIME-DE/blob/master/BrainExtraction/release/1_train12.gif)
 
-#### Brain masks for 30 macaque monkeys from 6 of 13 sites used for training 
-![Testing masks](https://github.com/TingsterX/PRIME-DE/blob/master/BrainExtraction/release/pre-release_2020-04-08/test_unet.gif)
+#### Manually edited brain masks for model-updating training (7 macaque monkeys from 7 sites, 1 per site)
+![Testing masks](https://github.com/TingsterX/PRIME-DE/blob/master/BrainExtraction/release/1_train7.gif)
 
-#### Brain masks for 85 macaque monkeys left
-![release](https://github.com/TingsterX/PRIME-DE/blob/master/BrainExtraction/release/pre-release_2020-04-08/other_unet.gif)
+#### Brain masks for 136 macaque monkeys (released mask)
+![release](https://github.com/TingsterX/PRIME-DE/blob/master/BrainExtraction/release/4_release.gif)
 
 Reference:
 [OHBM2019 poster](https://ww5.aievolution.com/hbm1901/index.cfm?do=abs.viewAbs&abs=4924)
+
 Paper: coming soon
 
