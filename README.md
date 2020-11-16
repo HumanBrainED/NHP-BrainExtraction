@@ -46,7 +46,7 @@ Output: *_pre_mask.nii.gz
 ![Training masks](https://github.com/TingsterX/PRIME-DE/blob/master/BrainExtraction/release/1_train12.gif)
 
 #### Manually edited brain masks for model-updating training (7 macaque monkeys from 7 sites, 1 per site)
-![Testing masks](https://github.com/TingsterX/PRIME-DE/blob/master/BrainExtraction/release/1_train7.gif)
+![Testing masks](https://github.com/TingsterX/PRIME-DE/blob/master/BrainExtraction/release/2_train7.gif)
 
 #### Brain masks for 136 macaque monkeys (released mask)
 ![release](https://github.com/TingsterX/PRIME-DE/blob/master/BrainExtraction/release/4_release.gif)
