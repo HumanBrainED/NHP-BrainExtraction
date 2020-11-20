@@ -57,5 +57,5 @@ Output: *_pre_mask.nii.gz
 Reference:
 [OHBM2019 poster](https://ww5.aievolution.com/hbm1901/index.cfm?do=abs.viewAbs&abs=4924)
 
-Paper (preprint): https://biorxiv.org/cgi/content/short/2020.11.17.385898v1
+Paper: [biorxiv preprint](https://biorxiv.org/cgi/content/short/2020.11.17.385898v1)
 
