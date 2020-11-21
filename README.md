@@ -33,6 +33,12 @@ python3 /path_to_the_code/muSkullStrip.py -in /path_to_the_data/input_t1.nii.gz 
 ```
 Output: *_pre_mask.nii.gz
 
+#### Custimize the model for your own dataset 
+```
+python3 /path_to_the_code/trainSs_UNet.py --train_t1w /directory_of_the_training_images --train_msk /directory_of_the_training_image_masks -out /output_directory --validate_t1w /directory_of_the_validation_images --validate_msk /directory_of_the_validation_image_masks --init_model /initial_model_to_start_with
+```
+Note: Our macaque model was a transfer-learning model using a human dataset as the 'initial model' (--init_model option). You can use the model we provided to custimize the model for your own dataset (even across species). 
+
 #### The trained models can be used  '-model'
 1. **Site-All-T-epoch_36.model**: Trained on 12 macaques across 6 sites (2 macaques per site) from PRIME-DE. Six sites include newcastle, ucdavis, oxford, ion, ecnu-chen, and sbri.
 
