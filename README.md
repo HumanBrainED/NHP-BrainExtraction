@@ -35,11 +35,12 @@ Output: *_pre_mask.nii.gz
 
 #### Custimize the model for your own dataset 
 ```
-python3 /path_to_the_code/trainSs_UNet.py --train_t1w /directory_of_the_training_images --train_msk /directory_of_the_training_image_masks -out /output_directory --validate_t1w /directory_of_the_validation_images --validate_msk /directory_of_the_validation_image_masks --init_model /initial_model_to_start_with
+python3 /path_to_the_code/trainSs_UNet.py -trt1w /directory_of_the_training_images -trmsk /directory_of_the_training_image_masks -out /output_directory -vt1w /directory_of_the_validation_images -vmsk /directory_of_the_validation_image_masks -init /initial_model_to_start_with
 ```
-Note: Our macaque model was a transfer-learning model using a human dataset as the 'initial model' (--init_model option). You can use the model we provided to custimize the model for your own dataset (even across species). 
+Note: Our macaque model was a transfer-learning model using a human dataset as the 'initial model' (-init option). You can use the model we provided to custimize the model for your own dataset (even across species). 
 
-#### The trained models can be used  '-model'
+
+#### The trained models can be used in prediction (**muSkullStrip.py -model**) or model-updating (**trainSs_Unet.py -init**)
 1. **Site-All-T-epoch_36.model**: Trained on 12 macaques across 6 sites (2 macaques per site) from PRIME-DE. Six sites include newcastle, ucdavis, oxford, ion, ecnu-chen, and sbri.
 
 2. **Site-All-T-epoch_36_update_with_Site_6_plus_7-epoch_09.model**: Trained on 19 macaques across 13 sites from PRIME-DE (12 macaques across 6 sites used in the first model and 7 macaques across 7 additional sites) Seven sites include NIMH, ecnu-k, nin, rockefeller, uwo, mountsinai-S, and lyon.
