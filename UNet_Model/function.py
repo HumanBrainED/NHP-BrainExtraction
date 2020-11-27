@@ -37,6 +37,13 @@ def extract_large_comp(prt_msk):
 
     return prt_msk
 
+def fill_holes(prt_msk):
+    non_prt_msk=prt_msk==0
+    non_prt_msk=extract_large_comp(non_prt_msk)
+    prt_msk_filled=non_prt_msk==0
+
+    return prt_msk_filled
+
 def erosion_dilation(prt_msk, structure=snd.generate_binary_structure(3, 1), iterations=1):
     # Erosion
     prt_msk_eroded=snd.binary_erosion(prt_msk, structure=structure, iterations=iterations).astype(prt_msk.dtype)
@@ -143,6 +150,7 @@ def predict_volumes(model, rimg_in=None, cimg_in=None, bmsk_in=None, suffix="pre
         
         pr_bmsk=pr_bmsk.numpy()
         pr_bmsk_final=extract_large_comp(pr_bmsk>0.5)
+        pr_bmsk_final=fill_holes(pr_bmsk_final)
         if ed_iter>0:
             pr_bmsk_final=erosion_dilation(pr_bmsk_final, iterations=ed_iter)
         
