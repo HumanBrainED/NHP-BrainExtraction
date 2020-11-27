@@ -37,7 +37,19 @@ def extract_large_comp(prt_msk):
 
     return prt_msk
 
-def predict_volumes(model, rimg_in=None, cimg_in=None, bmsk_in=None, suffix="pre_mask",
+def erosion_dilation(prt_msk, structure=snd.generate_binary_structure(3, 1), iterations=1):
+    # Erosion
+    prt_msk_eroded=snd.binary_erosion(prt_msk, structure=structure, iterations=iterations).astype(prt_msk.dtype)
+
+    # Extract Largest Component
+    prt_msk_eroded=extract_large_comp(prt_msk_eroded)
+
+    # Dilation
+    prt_msk_dilated=snd.binary_dilation(prt_msk_eroded, structure=structure, iterations=iterations).astype(prt_msk.dtype)
+
+    return prt_msk_dilated
+
+def predict_volumes(model, rimg_in=None, cimg_in=None, bmsk_in=None, suffix="pre_mask", ed_iter=0,
         save_dice=False, save_nii=False, nii_outdir=None, verbose=False, 
         rescale_dim=256, num_slice=3):
     use_gpu=torch.cuda.is_available()
@@ -131,6 +143,8 @@ def predict_volumes(model, rimg_in=None, cimg_in=None, bmsk_in=None, suffix="pre
         
         pr_bmsk=pr_bmsk.numpy()
         pr_bmsk_final=extract_large_comp(pr_bmsk>0.5)
+        if ed_iter>0:
+            pr_bmsk_final=erosion_dilation(pr_bmsk_final, iterations=ed_iter)
         
         if isinstance(bmsk, torch.Tensor):
             bmsk=bmsk.data[0].numpy()
@@ -141,6 +155,8 @@ def predict_volumes(model, rimg_in=None, cimg_in=None, bmsk_in=None, suffix="pre
         t1w_nii=volume_dataset.getCurCimgNii()
         t1w_path=t1w_nii.get_filename()
         t1w_dir, t1w_file=os.path.split(t1w_path)
+        if t1w_dir=="":
+            t1w_dir=os.curdir
         t1w_name=os.path.splitext(t1w_file)[0]
         t1w_name=os.path.splitext(t1w_name)[0]
 
@@ -164,4 +180,8 @@ def predict_volumes(model, rimg_in=None, cimg_in=None, bmsk_in=None, suffix="pre
 
 # Unit test
 if __name__=='__main__':
-    pass
+    nifile=sys.argv[1]
+    nii=nib.load(nifile)
+    nii_data=nii.get_data()
+    ed_data=erosion_dilation(nii_data, iterations=1)
+    write_nifti(ed_data, nii.affine, ed_data.shape, "test.nii.gz")
