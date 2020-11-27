@@ -25,7 +25,7 @@ This is a pre-release of skull-stripped brian masks of T1w images for 136 macaqu
 ----
 #### Installation
 
-python3, numpy, pytorch
+python3, numpy, pytorch, nibabel
 
 #### Run brain mask prediction
 ```
