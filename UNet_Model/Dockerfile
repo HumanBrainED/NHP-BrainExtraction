@@ -9,7 +9,9 @@ COPY *.py /UNet_Model/
 COPY models/*.model /UNet_Model/models/
 
 # Add UNet Path into ENV
-ENV PYTHONPATH="/UNet_Model:$PYTHONPATH" \
+ENV DIMGNAME="sandywangrest/deepbet" \
+    PYTHONPATH="/UNet_Model:$PYTHONPATH" \
     PATH="/UNet_Model:/UNet_Model/models/:$PATH"
 
-#CMD muSkullStrip.py
+WORKDIR /UNet_Model/models
+CMD docker_Help.py
