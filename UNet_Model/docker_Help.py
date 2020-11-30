@@ -3,24 +3,31 @@ import os
 
 def docker_help(ImgName):
     query = """=============================sandywangrest/deepbet helper=============================
-  Permforming Skullstripping
-    With GPU:
-      docker run --gpus all -v (your work directory):/data \ 
-          %s \ 
-          muSkullStrip.py \ 
-              -in /data/(specified NIfTI file) \ 
-              -model Site-All-T-epoch_36_update_with_Site_6_plus_7-epoch_09.model
-              (optional arguments)
-    Without GPU:
-      docker run -v (your work directory):/data \ 
-          %s \ 
-          muSkullStrip.py \ 
-              -in /data/(specified NIfTI file) \ 
-              -model Site-All-T-epoch_36_update_with_Site_6_plus_7-epoch_09.model
-              (optional arguments)
-    Help for muSkullStrip.py
-      docker run %s muSkullStrip.py
-    
+ --------------------------
+ Permforming Skullstripping (
+    + With GPU:
+        docker run --gpus all -v (your work directory):/data \ 
+            %s \ 
+            muSkullStrip.py \ 
+                -in /data/(specified NIfTI file) \ 
+                -model Site-All-T-epoch_36_update_with_Site_6_plus_7-epoch_09.model
+                (optional arguments)
+    + Without GPU:
+        docker run -v (your work directory):/data \ 
+            %s \ 
+            muSkullStrip.py \ 
+                -in /data/(specified NIfTI file) \ 
+                -model Site-All-T-epoch_36_update_with_Site_6_plus_7-epoch_09.model
+                (optional arguments)
+
+    + Optional arguments see help for muSkullStrip.py
+        docker run %s muSkullStrip.py
+      
+    + Use custimized model, add
+        -v (Path of model for testing):/Models
+        -model /Models/(your model)
+
+  -------------------------  
   Traing & Updating Models 
     With GPU:
       docker run --gpus all \ 
@@ -44,9 +51,9 @@ def docker_help(ImgName):
               -trmsk /TrainMsk \ 
               -out /Results \ 
               (optional arguments)
-    Help for trainSs_UNet.py
+    Optimal arguments see help for trainSs_UNet.py
       docker run %s trainSs_UNet.py
-
+  --------------------------
   Testing Models
     With GPU:
       docker run --gpus all \ 
@@ -74,7 +81,8 @@ def docker_help(ImgName):
               -model /Models/(your model for testing) \ 
               -out /Results \ 
               (optional arguments)
-    Help for testSs_UNet.py
+
+    Optimal arguments see help for testSs_UNet.py
       docker run %s testSs_UNet.py
 
   Listing Models in Container
