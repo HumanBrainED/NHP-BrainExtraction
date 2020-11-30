@@ -21,6 +21,19 @@ This is a pre-release of skull-stripped brian masks of T1w images for 136 macaqu
 
 [FreeSurfer](https://github.com/HumanBrainED/NHP-BrainExtraction/blob/master/PRIME-DE_BrainMask/vcheck_summary_FS.md)
 
+## Docker Image
+#### Pull
+Pre-release docker image has been uploaded onto DockerHub, you could download it by using the following command
+```
+docker pull sandywangrest/deepbet:latest
+```
+
+#### Helper
+For the usage of this image, please running
+```
+docker run sandywangrest/deepbet
+```
+
 ## UNet Model
 ----
 #### Installation
@@ -59,7 +72,6 @@ Note: Our macaque model was a transfer-learning model using a human dataset as t
 ![release](https://github.com/TingsterX/PRIME-DE/blob/master/BrainExtraction/release/4_release.gif)
 
 ### [Download brain masks (136 macaques)](https://github.com/HumanBrainED/NHP-BrainExtraction/blob/master/PRIME-DE_BrainMask/brainmasks/brainmask_T1w_136macaques.tar)
-
 
 Reference:
 [OHBM2019 poster](https://ww5.aievolution.com/hbm1901/index.cfm?do=abs.viewAbs&abs=4924)
