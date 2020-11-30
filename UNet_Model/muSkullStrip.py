@@ -22,6 +22,7 @@ if __name__=='__main__':
     optional.add_argument('-conv', '--conv_block', type=int, default=5, help='Number of UNet Block')
     optional.add_argument('-kernel', '--kernel_root', type=int, default=16, help='Number of the Root of Kernel')
     optional.add_argument('-rescale', '--rescale_dim', type=int, default=256, help='Number of the Root of Kernel')
+    optional.add_argument('-ed_iter', '--erosion_dilation_iteration', type=int, default=0, help='Number of Iteration for Erosion and Dilation')
     parser._action_groups.append(optional)
     if len(sys.argv)==1:
         parser.print_help()
@@ -35,4 +36,4 @@ if __name__=='__main__':
     model=nn.Sequential(train_model, nn.Softmax2d())
 
     predict_volumes(model, cimg_in=args.input_t1w, bmsk_in=None, rescale_dim=args.rescale_dim, save_dice=False,
-            save_nii=True, nii_outdir=args.out_dir, suffix=args.mask_suffix)
+            save_nii=True, nii_outdir=args.out_dir, suffix=args.mask_suffix, ed_iter=args.erosion_dilation_iteration)
