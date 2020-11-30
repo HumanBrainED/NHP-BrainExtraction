@@ -9,7 +9,7 @@ import argparse
 if __name__=='__main__':
     NoneType=type(None)
     # Argument
-    parser=argparse.ArgumentParser(description='Skull Stripping', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser=argparse.ArgumentParser(description='Skullstripping', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     optional=parser._action_groups.pop()
     required=parser.add_argument_group('required arguments')
     # Required Option
@@ -28,7 +28,8 @@ if __name__=='__main__':
         parser.print_help()
         sys.exit(1)
     args = parser.parse_args()
-    # Define whether show slice results
+
+    print("=============================Permforming Skullstripping=============================")
     
     train_model=UNet2d(dim_in=args.input_slice, num_conv_block=args.conv_block, kernel_root=args.kernel_root)
     checkpoint=torch.load(args.predict_model, map_location={'cuda:0':'cpu'})
