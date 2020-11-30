@@ -15,7 +15,7 @@ import argparse
 if __name__=='__main__':
     NoneType=type(None)
     # Argument
-    parser = argparse.ArgumentParser(description='Test', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser = argparse.ArgumentParser(description='Testing Model', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     optional=parser._action_groups.pop()
     required=parser.add_argument_group('required arguments')
     # Required Option
@@ -33,6 +33,8 @@ if __name__=='__main__':
         parser.print_help()
         sys.exit(1)
     args = parser.parse_args()
+
+    print("===================================Testing Model====================================")
 
     if not os.path.exists(args.test_msk) or not os.path.exists(args.test_t1w):
         print("Invalid test directory, please check again!")

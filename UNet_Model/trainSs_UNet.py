@@ -16,7 +16,7 @@ import numpy as np
 if __name__=='__main__':
     NoneType=type(None)
     # Argument
-    parser = argparse.ArgumentParser(description='Train', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser = argparse.ArgumentParser(description='Training Model', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     optional=parser._action_groups.pop()
     required=parser.add_argument_group('required arguments')
     # Required Option
@@ -39,6 +39,8 @@ if __name__=='__main__':
         parser.print_help()
         sys.exit(1)
     args = parser.parse_args()
+
+    print("===================================Training Model===================================")
     
     if not os.path.exists(args.train_msk) or not os.path.exists(args.train_t1w):
         print("Invalid train directory, please check again!")
