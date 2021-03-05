@@ -22,6 +22,11 @@ This is a pre-release of skull-stripped brian masks of T1w images for 136 macaqu
 [FreeSurfer](https://github.com/HumanBrainED/NHP-BrainExtraction/blob/master/PRIME-DE_BrainMask/vcheck_summary_FS.md)
 
 ## Docker Image
+#### Storage Requirement
+5.2GB hard disk space for whole docker image, including our model, pytorch, nibabel, scipy.
+
+NOTE: Our model needs about 357MB hard disk space, user can also modify its DockerFile and add our model in its docker image.
+
 #### Pull
 Pre-release docker image has been uploaded onto DockerHub, you could download it by using the following command
 ```
