@@ -25,7 +25,10 @@ This is a pre-release of skull-stripped brian masks of T1w images for 136 macaqu
 #### Storage Requirement
 5.2GB hard disk space for whole docker image, including our model, pytorch, nibabel, scipy.
 
-NOTE: Our model needs about 357MB hard disk space, user can also modify its DockerFile and add our model in its docker image.
+pytorch, numpy  - about 4.7GB
+nibabel, scipy  - about 188MB
+our codes       - about 44KB
+12 models files - about 356MB
 
 #### Pull
 Pre-release docker image has been uploaded onto DockerHub, you could download it by using the following command
