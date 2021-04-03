@@ -11,8 +11,8 @@ fi
 
 dir=$1
 sub=$2
-atl=`remove_ext $(readlink -f $3)` #'/Users/xinhui.li/macaca/ANTs/NMT_0.5mm.nii.gz' 
-atl_brain=`remove_ext $(readlink -f $4)` #'/Users/xinhui.li/macaca/ANTs/NMT_SS_0.5mm.nii.gz'
+atl=`remove_ext $(readlink -f $3)` # path of template head, e.g. '/home/xli/ANTs/NMT_0.5mm.nii.gz' 
+atl_brain=`remove_ext $(readlink -f $4)` # path of template brain, e.g. '/home/xli/ANTs/NMT_SS_0.5mm.nii.gz'
 
 
 pushd $dir
