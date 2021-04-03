@@ -1,3 +1,8 @@
+'''Script to recenter and crop T1w data and run AFNI @animal_warper on new T1w
+
+author: Xinhui Li 04/02/21
+'''
+
 import os
 import sys
 import getopt

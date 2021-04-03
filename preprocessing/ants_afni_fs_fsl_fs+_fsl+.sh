@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# Author: 
+# Jae Wook Cho
+
 # Input example: 
 # /home/xli/data/site-newcastle/sub-032104/sub-032104_ses-003_run-1_T1w.nii.gz
 
