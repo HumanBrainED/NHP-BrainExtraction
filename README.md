@@ -33,7 +33,7 @@ our codes       - about 44KB
 #### Pull
 Pre-release docker image has been uploaded onto DockerHub, you could download it by using the following command
 ```
-docker pull sandywangrest/deepbet:latest
+docker pull sandywangrest/deepbet:1.0
 ```
 
 #### Helper
