@@ -67,7 +67,6 @@ Note: Our macaque model was a transfer-learning model using a human dataset as t
 
 
 Reference:
-[OHBM2019 poster](https://ww5.aievolution.com/hbm1901/index.cfm?do=abs.viewAbs&abs=4924)
 
 Paper: [NeuroImage](https://www.sciencedirect.com/science/article/pii/S1053811921002780#!)
 
