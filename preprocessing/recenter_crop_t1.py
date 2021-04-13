@@ -2,15 +2,13 @@
 
 Instructions
 
-The inputs include T1w, initial brain mask (ex. U-Net mask), NMT T1w, NMT brain mask.
+The inputs include T1w and an initial brain mask (ex. U-Net mask).
 The output will be a recentered and cropped T1w in the working directory.
 For example, if all data is in the same folder as following:
 
 /home/xli/data/site-princeton/sub-032114
     - sub-032114_ses-001_run-1_T1w.nii.gz
     - sub-032114_ses-001_run-1_T1w_mask.nii.gz
-    - NMT_v2.0_sym/NMT_v2.0_sym_05mm/NMT_v2.0_sym_05mm.nii.gz
-    - NMT_v2.0_sym/NMT_v2.0_sym_05mm/NMT_v2.0_sym_05mm_brainmask.nii.gz
 
 We can offer relative or absolute paths to run the script:
 
@@ -18,8 +16,6 @@ python recenter_crop_t1.py \
 -w /home/xli/data/sub-032114 \
 -t sub-032114_ses-001_run-1_T1w.nii.gz \
 -m sub-032114_ses-001_run-1_T1w_mask.nii.gz \
--tt NMT_v2.0_sym/NMT_v2.0_sym_05mm/NMT_v2.0_sym_05mm.nii.gz \
--tm NMT_v2.0_sym/NMT_v2.0_sym_05mm/NMT_v2.0_sym_05mm_brainmask.nii.gz
 
 Author: Xinhui Li 04/02/21
 '''
@@ -31,7 +27,7 @@ import argparse
 import numpy as np
 import nibabel as nb
 
-def recenter_crop_t1(wd, t1, mask, template, template_mask):
+def recenter_crop_t1(wd, t1, mask):
 
     os.chdir(wd)
 
@@ -75,12 +71,10 @@ if __name__=='__main__':
     required.add_argument('-w', '--working_dir', type=str, required=True, help='working directory')
     required.add_argument('-t', '--t1_path', type=str, required=True, help='t1w path')
     required.add_argument('-m', '--mask_path', type=str, required=True, help='mask path')
-    required.add_argument('-tt', '--template_t1_path', type=str, required=True, help='template t1 path')
-    required.add_argument('-tm', '--template_mask_path', type=str, required=True, help='template mask path')
 
     if len(sys.argv)==1:
         parser.print_help()
         sys.exit(1)
     args = parser.parse_args()
 
-    recenter_crop_t1(args.working_dir, args.t1_path, args.mask_path, args.template_t1_path, args.template_mask_path)
+    recenter_crop_t1(args.working_dir, args.t1_path, args.mask_path)
