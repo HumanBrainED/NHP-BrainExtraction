@@ -25,7 +25,8 @@ def docker_help(ImgName):
     + Optional arguments see help for muSkullStrip.py
         docker run %s muSkullStrip.py
       
-    + Use custimized model, add
+    + Use your custimized model
+        mount your model directory and specify the model by adding:
         -v (Path of model for testing):/Models
         -model /Models/(your model)
 
@@ -98,6 +99,15 @@ def docker_help(ImgName):
 
     docker run %s ls
 
+  --------------------------
+  Tips:
+  1. Make sure that the input head image is correctly oriented. 
+  2. The models inlcuded in the docker were trained on the bias corrected data. 
+     Thus, run denoising and bias correction before the skullstripping is helpful. 
+     For example, command DenoiseImage, N4BiasFieldCorrection using ANTs.
+  3. If the current model failed, custimize the current model using your data. 
+     See help for 'Updating Models' above.
+  --------------------------
   NOTE: To use --gpus option, you need install nvidia-container-toolkit
             """ % \
                 (ImgName, ImgName, ImgName, ImgName, ImgName, ImgName, 

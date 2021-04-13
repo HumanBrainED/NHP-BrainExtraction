@@ -1,6 +1,6 @@
-## U-Net model and PRIME-DE skull-stripped brain masks (pre-release)
+## U-Net model and PRIME-DE skull-stripped brain masks (v1.0)
 
-Date: Nov 12th, 2020
+Date: April 12th, 2021
 
 ----
 ## Descriptions
@@ -17,9 +17,13 @@ This is a pre-release of skull-stripped brian masks of T1w images for 136 macaqu
 
 [FLIRT+ANTS](https://github.com/HumanBrainED/NHP-BrainExtraction/blob/master/PRIME-DE_BrainMask/vcheck_summary_FLIRT%2BANTS.md)
 
-[FSL BET](https://github.com/HumanBrainED/NHP-BrainExtraction/blob/master/PRIME-DE_BrainMask/vcheck_summary_FS.md)
+[FSL BET](https://github.com/HumanBrainED/NHP-BrainExtraction/blob/master/PRIME-DE_BrainMask/vcheck_summary_FSL.md)
+
+[FSL+ BET](https://github.com/HumanBrainED/NHP-BrainExtraction/blob/master/PRIME-DE_BrainMask/vcheck_summary_FSL+.md)
 
 [FreeSurfer](https://github.com/HumanBrainED/NHP-BrainExtraction/blob/master/PRIME-DE_BrainMask/vcheck_summary_FS.md)
+
+[FreeSurfer+](https://github.com/HumanBrainED/NHP-BrainExtraction/blob/master/PRIME-DE_BrainMask/vcheck_summary_FS+.md)
 
 ## Docker Image
 #### Storage Requirement
@@ -82,7 +86,6 @@ Note: Our macaque model was a transfer-learning model using a human dataset as t
 ### [Download brain masks (136 macaques)](https://github.com/HumanBrainED/NHP-BrainExtraction/blob/master/PRIME-DE_BrainMask/brainmasks/brainmask_T1w_136macaques.tar)
 
 Reference:
-[OHBM2019 poster](https://ww5.aievolution.com/hbm1901/index.cfm?do=abs.viewAbs&abs=4924)
 
-Paper: [biorxiv preprint](https://biorxiv.org/cgi/content/short/2020.11.17.385898v1)
+Paper: [NeuroImage](https://www.sciencedirect.com/science/article/pii/S1053811921002780#!)
 
