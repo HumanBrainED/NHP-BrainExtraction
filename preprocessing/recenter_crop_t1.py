@@ -63,7 +63,7 @@ def recenter_crop_t1(wd, t1, mask):
 if __name__=='__main__':
 
     # arguments
-    parser = argparse.ArgumentParser(description='Training Model', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser = argparse.ArgumentParser(description='Recenter and crop T1w image', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     optional=parser._action_groups.pop()
     required=parser.add_argument_group('required arguments')
 
