@@ -1,9 +1,10 @@
-'''Script to recenter and crop T1w data for AFNI @animal_warper
+'''Script to recenter and crop T1w
 
 Instructions
 
-For example, if all data (T1w, initial mask, NMT T1w, NMT mask) 
-is in the same folder as following:
+The inputs include T1w, initial brain mask (ex. U-Net mask), NMT T1w, NMT brain mask.
+The output will be a recentered and cropped T1w in the working directory.
+For example, if all data is in the same folder as following:
 
 /home/xli/data/site-princeton/sub-032114
     - sub-032114_ses-001_run-1_T1w.nii.gz
@@ -13,14 +14,14 @@ is in the same folder as following:
 
 We can offer relative or absolute paths to run the script:
 
-python animal_warper_recenter-crop.py \
+python recenter_crop_t1.py \
 -w /home/xli/data/sub-032114 \
 -t sub-032114_ses-001_run-1_T1w.nii.gz \
 -m sub-032114_ses-001_run-1_T1w_mask.nii.gz \
 -tt NMT_v2.0_sym/NMT_v2.0_sym_05mm/NMT_v2.0_sym_05mm.nii.gz \
 -tm NMT_v2.0_sym/NMT_v2.0_sym_05mm/NMT_v2.0_sym_05mm_brainmask.nii.gz
 
-author: Xinhui Li 04/02/21
+Author: Xinhui Li 04/02/21
 '''
 
 import os
