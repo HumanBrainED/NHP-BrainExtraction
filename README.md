@@ -4,7 +4,7 @@ Date: April 12th, 2021
 
 ----
 ## Description
-This repo includes the brain extraction tool (DeepBet v1.0) for skull-stripping the nonhuman primate images. We also inlcude brain masks of 136 macaque monkeys (20 sites) from [PRIME-DE](http://fcon_1000.projects.nitrc.org/indi/indiPRIME.html). The tool is constructed using a convolutional network - UNet model, initially trained on a [human sample](https://academic.oup.com/gigascience/article/5/1/s13742-016-0150-5/2737425) and updated with macaque data. 
+This repo includes the brain extraction tool (DeepBet v1.0) for skull-stripping the nonhuman primate images. We also include brain masks of 136 macaque monkeys (20 sites) from [PRIME-DE](http://fcon_1000.projects.nitrc.org/indi/indiPRIME.html). The tool is constructed using a convolutional network - UNet model, initially trained on a [human sample](https://academic.oup.com/gigascience/article/5/1/s13742-016-0150-5/2737425) and updated with macaque data. 
 
 In this repo, we also include the outputs from other tools (AFNI, FSL, FreeSurfer, ANTS) - [a glance of the performance for different pipelines](#A-galance-of-performance-for-different-pipelines)
 
