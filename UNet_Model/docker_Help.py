@@ -4,7 +4,7 @@ import os
 def docker_help(ImgName):
     query = """=============================%s helper=============================
   --------------------------
-  Permforming Skullstripping 
+  Performing Skullstripping 
 
     + With GPU:
         docker run --gpus all -v (your work directory):/data \ 
@@ -31,7 +31,7 @@ def docker_help(ImgName):
         -model /Models/(your model)
 
   -------------------------  
-  Traing & Updating Models 
+  Training & Updating Models 
 
     + With GPU:
         docker run --gpus all \ 
