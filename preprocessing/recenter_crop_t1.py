@@ -35,8 +35,9 @@ def recenter_crop_t1(wd, t1, mask):
     mask_data = nb.load(mask).get_fdata()
 
     if t1_data.shape != mask_data.shape:
-        raise Exception("\n\n[!] Error: T1w and brain mask have different dimension, "
-            "please edit your image and make sure both images have the same dimension.\n\n")
+        raise Exception(f"\n\n[!] Error: The dimension of T1w is {t1_data.shape} "
+            f"but the dimension of brain mask is {mask_data.shape}. "
+            "Please edit your image and make sure both images have the same dimension.\n\n")
 
     # calculate new center position
     nonzero_index = np.unique(np.nonzero(mask_data)[2])
