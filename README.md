@@ -1,4 +1,4 @@
-## DeepSeg - U-Net Brain extraction tool for nonhuman primates
+## DeepBet - U-Net Brain extraction tool for nonhuman primates
 
 Date: April 12th, 2021
 
